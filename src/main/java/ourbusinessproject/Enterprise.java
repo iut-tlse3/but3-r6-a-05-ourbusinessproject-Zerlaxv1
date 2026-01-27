@@ -40,4 +40,8 @@ public class Enterprise {
     public void setContactEmail(String mail) {
         this.contactEmail = mail;
     }
+
+    public Long getId() {
+        return id;
+    }
 }
