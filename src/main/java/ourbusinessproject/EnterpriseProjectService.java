@@ -39,11 +39,12 @@ public class EnterpriseProjectService {
         return enterprise;
     }
 
-    public Project newProject(String aTitle, String aDescription) {
+    public Project newProject(String aTitle, String aDescription, Enterprise aEnterprise) {
         Project project = new Project();
 
         project.setTitle(aTitle);
         project.setDescription(aDescription);
+        project.setEnterprise(aEnterprise);
 
         entityManager.persist(project);
         entityManager.flush();
