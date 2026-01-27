@@ -1,13 +1,13 @@
-package outbusinessproject.outbusinessproject;
+package ourbusinessproject.ourbusinessproject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OutBusinessProjectApplication {
+public class OurBusinessProjectApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(OutBusinessProjectApplication.class, args);
+        SpringApplication.run(OurBusinessProjectApplication.class, args);
     }
 
 }
