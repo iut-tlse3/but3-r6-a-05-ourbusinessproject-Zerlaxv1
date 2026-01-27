@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @Transactional
-class EntrepriseProjectServiceIntegrationTest {
+class EnterpriseProjectServiceIntegrationTest {
 
     @Autowired
     private EnterpriseProjectService enterpriseProjectService;
@@ -33,18 +33,18 @@ class EntrepriseProjectServiceIntegrationTest {
     @DisplayName("Test a valid enterprise is saved when created")
     public void testEnterpriseIsSavedWhenCreated() {
         // when: trying to get a new enterprise with valid parameters
-        Entreprise entreprise = enterpriseProjectService.newEnterprise(
+        Enterprise enterprise = enterpriseProjectService.newEnterprise(
                 "a name",
                 "a description",
                 "a contact name",
                 "acontact@email.com"
         );
         // then: the enterprise as a generated id
-        assertNotNull(entreprise.getId());
+        assertNotNull(enterprise.getId());
         // when: trying to find the enterprise by id
-        Entreprise foundEntreprise = enterpriseProjectService.findEnterpriseById(entreprise.getId());
+        Enterprise foundEnterprise = enterpriseProjectService.findEnterpriseById(enterprise.getId());
         // then: the found enterprise is the same as the created enterprise
-        assertEquals(entreprise, foundEntreprise);
+        assertEquals(enterprise, foundEnterprise);
     }
 
     @Test
