@@ -7,6 +7,10 @@ import jakarta.validation.constraints.NotNull;
 @Entity
 public class Project {
 
+    @ManyToOne
+    @NotNull
+    Enterprise enterprise;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -15,27 +19,27 @@ public class Project {
     private String title;
     private String description;
 
-    @ManyToOne
-    @NotNull
-    Enterprise enterprise;
-
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public Long getId() {
         return id;
     }
 
+    public Enterprise getEnterprise() {
+        return enterprise;
+    }
+
     public void setEnterprise(Enterprise enterprise) {
         this.enterprise = enterprise;
     }
 
-    public Enterprise getEnterprise() {
-        return enterprise;
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }
