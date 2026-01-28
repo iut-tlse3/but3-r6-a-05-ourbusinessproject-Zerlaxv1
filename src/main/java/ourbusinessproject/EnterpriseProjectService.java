@@ -48,6 +48,8 @@ public class EnterpriseProjectService {
 
         entityManager.persist(project);
         entityManager.flush();
+
+        aEnterprise.addProject(project);
         return project;
     }
 }
