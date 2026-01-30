@@ -17,6 +17,7 @@ public class InitializationService {
 
     @Transactional
     public void initProjects() {
+        //etant donné que initProjects est en Transactional, c'est soit toute les opérations passent, soit aucune, et avec le titre mis sur null, le dernier insert fail et donc tout est rollback
         enterprise1 = enterpriseProjectService.newEnterprise("a kylian Corp", "ici on fait plein de truc gratuit !!", "Kylian Pawilowski", "kylianLeSuperBg@gmail.com");
         enterprise2 = enterpriseProjectService.newEnterprise("b allan inc.", "pro a league of legends", "Allan Fabre", "allanFabreChouBidouALaCreme@gmail.com");
 
